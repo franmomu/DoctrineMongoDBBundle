@@ -17,5 +17,7 @@ class CommandDataCollectorTest extends TestCase
         $collector = new CommandDataCollector(new CommandLogger());
 
         $collector->collect($request = new Request(['group' => '0']), $response = new Response());
+
+        $this->assertSame('mongodb', $collector->getName());
     }
 }
